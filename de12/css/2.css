@@ -47,8 +47,9 @@
 /*========= レイアウトのためのCSS ===============*/
 
 body{
-    background-image: url("C:\Users\Masuko Shida\mygit\xbp\de12\images\mirror_emo.gif");
+    background-image: url("../images/mirror_emo.gif");
     background-size: cover;
+    
     animation: 15s;
 }
 
