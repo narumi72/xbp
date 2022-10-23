@@ -28,6 +28,12 @@ html, body {
     margin-left: 15px;
     margin-bottom: 40px;
 	background: #efefef;
+    text-align: center;
+    background-image: url(../images/run.gif);
+    background-attachment: fixed;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+
 }
 h1{
     text-indent: 0em;
@@ -51,4 +57,3 @@ span.blackback{
     background: #393939;
     color: #efefef;
 }
-
