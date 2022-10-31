@@ -3,10 +3,13 @@
 <head>
 <meta charset="UTF-8" />
 <title>第四回</title>
+
+<link rel="stylesheet" type="text/css" href="css/2.css">
 </head>
 
 <body>
     <h1>迷路</h1>
+    <p>本当に疲れた</p>
     <pre><code>
         import tkinter
         import random
@@ -27,18 +30,17 @@
         PASSED_COLOR = "orange"
         NOW_COLOR = "red"
 
-# 数値の定義
-PATH = 0
-WALL = 1
-GOAL = 2
-START = 3
-PASSED = 4
-NOW = 5
-
-UP = 0
-DOWN = 1
-LEFT = 2
-RIGHT = 3
+        # 数値の定義
+        PATH = 0
+        WALL = 1
+        GOAL = 2
+        START = 3
+        PASSED = 4
+        NOW = 5
+        UP = 0
+        DOWN = 1
+        LEFT = 2
+         RIGHT = 3
 
 
 class Maze():
