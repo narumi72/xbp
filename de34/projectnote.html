@@ -1,0 +1,106 @@
+
+
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Lesson25</title>
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/fixed.css">
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/script.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+</head>
+
+<body>
+<div id="wrapper">
+  <header>
+    <h1>プロジェクトノート</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="#sec1">概要</a></li>
+      <li><a href="#sec2">構想</a></li>
+      <li><a href="#sec3">作業</a></li>
+      <li><a href="#sec4">次回目標</a></li>
+      <li><a href="#sec5">その他</a></li>
+    </ul>
+  </nav>
+  <main>
+    <section id="sec1">
+      <h1>概要</h1>
+      <h3>プロセスメモ</h3>
+      <p>
+        ■は考えないといけないこと、疑問など<br>
+        ●は具体的にやること<br>
+        →はやったこと
+    </p>
+      <a href="./images/kadai_mokuhiyo.jpg" target="_blank"><img src="./images/kadai_mokuhiyo.jpg" alt="znntei" width="70%"></a>
+    </section>
+    <section id="sec2">
+      <h1>構想</h1>
+      <p>■階段を使うことのプラスイメージを持ってもらうにはどのようなIoTサービスが必要か（メインテーマ）<br>
+           ●階段使用時の消費カロリーを可視化する装置とIoTサービスを作ってみよう！<br>
+           ■消費カロリーを可視化するためにはどうすればいいか？<br>
+           ●心電モニタセンサーを使ってみても面白そう！<br>
+            ：<a href="https://www.switch-science.com/products/1969" alt=心電モニタ>心電モニタ</a>
+        と<a href=https://www.switch-science.com/products/1135 alt=センサー>センサー</a>合わせて7000円越え…価格面で購入を断念。(´Д⊂ヽ<br>
+           ●歩数から消費カロリーが求められそう：<a href="https://keisan.casio.jp/exec/system/1161228742" alt=参考ページ>参考ページ</a><br>
+           ●加速度センサを使って歩数を計測できそう：<a href="https://mcm-www.jwu.ac.jp/~physm/buturi19/sensor/walk.html" alt="参考ページ">参考ページ</a><br>
+           ■加速度センサとWiFiモジュールとArduinoを使用して、リアルタイムの消費カロリー表示ができるのでは？<br>
+           ●リアルタイム通信はできそう：<a href="https://jetloger.com/arduino-wroom02-wifi-chartjs-01/" alt=参考ページ>参考ページ</a><br>
+           →リアルタイムの消費カロリー表示をするために必要なモジュールを買ってみる</p>
+    </section>
+    <section id="sec3">
+      <h1>作業</h1>
+      <p><h4>＜モジュール購入編＞</h4>
+        &emsp;&emsp;&emsp;<p>■ArduinoのWiFiモジュールはESP-WROOM-02を使用した例が多かったので、ESP-WROOM-02の購入を検討</p>
+        &emsp;&emsp;&emsp;<p>●ESP-WROOM-02単体だと、他に必要な部品や調整が多く、大変そうだった：<a href="https://raspberrypi.mongonta.com/howtomake-espwroom02-hardware/">参考ページ</a></p>
+        &emsp;&emsp;&emsp;<p>→USBシリアルインターフェースやコンデンサなどがすでに繋がっているESP-WROOM-02 開発ボードを購入することにした：<a href="https://akizukidenshi.com/catalog/g/gK-12236/">購入したWiFiモジュール</a></p>
+        
+        &emsp;&emsp;&emsp;<p>■加速度センサモジュールはADXL345を使用した例が多かったが、秋月電子で販売していなかった</p>
+        &emsp;&emsp;&emsp;<p>→この<a href="https://deviceplus.jp/arduino/entry017/">ページ</a>を参考に、KXR94-2050を購入することにした：<a href="https://akizukidenshi.com/catalog/g/gM-05153/">購入した加速度センサモジュール</a></p>
+        
+   
+        <h4>＜モジュール調整編＞</h4>
+        &emsp;&emsp;&emsp;→この<a href="https://akizukidenshi.com/download/ds/akizuki/AE-ESP-WROOM02-DEV.pdf">説明書</a>を参考に、Wifiモジュールの初期設定を行った<br><br>
+   
+        &emsp;&emsp;&emsp;→この<a href="http://zattouka.net/GarageHouse/micon/Arduino/Acceleration/Acceleration.htm">ページ</a>を参考に、加速度センサモジュールとArduinoを繋ぎ、加速度情報をPCで見れるようにした。<br><br>
+   
+   
+        <h4>＜モジュール接続編＞</h4>
+        &emsp;&emsp;&emsp;→次に以下の画像のように加速センサモジュール、Arduino、WiFiモジュールの3つを繋げようとした<br>
+        <a href="./images/setuzoku.jpg"><img src="./images/setuzoku.jpg" width="70%"></a><br>
+        &emsp;&emsp;&emsp;→しかしながら、赤字の部分がうまくいかない...<br></p>
+    </section>
+    <section id="sec4">
+      <h1>次回目標</h1>
+      <a href="./images/thiyukan_mokuhiyo.jpg" target="_blank"><img src="./images/thiyukan_mokuhiyo.jpg" alt="mokuhyo" width="70%"></a><br>
+      
+      <p>・Arduino内で歩数カウントと消費カロリーを算出する<br>
+     ・WiFiモジュールとPC（スマホ）でリアルタイムの情報交換をする<br>
+     ・加速度センサー、WiFiモジュール、Arduinoをまとめる箱を作る<br></p>
+    </section>
+    
+    <section id="sec5">
+      <h1>その他</h1>
+     ・<a href="https://akizukidenshi.com/catalog/g/gK-12236/">ESP-WROOM-02 開発ボード （WiFiモジュール）</a><br><br>
+
+     ・<a href="https://akizukidenshi.com/catalog/g/gM-05153/">KXR94-2050 （3軸加速度センサモジュール）</a><br><br>
+
+     <h3>紹介動画</h3>
+     <br><br>
+
+
+     <h3>班のメンバー</h3>
+     <a href="https://amikur.github.io/xbp/de34/index.html">あみくら</a>
+     <a href="https://hidemasa0222.github.io/xbp/de34/index.html">ひで</a>
+     <a href="https://s-h17.github.io/xbp/de34/index.html">はやと</a>
+     <a href="https://narumi72.github.io/xbp/de34/index.html">なるみ</a>
+     <a href="https://tanetaro.github.io/xbp/de34/index.html">たねたろー</a>
+
+    </section>
+  </main>
+</div>
+</body>
+</html>
