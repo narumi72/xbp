@@ -1,0 +1,92 @@
+
+
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Project note</title>
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/fixed.css">
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/script.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+</head>
+
+<body>
+<div id="wrapper">
+  <header>
+    <h1>プロジェクトノート</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="#sec1">振り返り</a></li>
+      <li><a href="#sec2">構想</a></li>
+      <li><a href="#sec3">作業進捗</a></li>
+      <li><a href="#sec4">次回目標</a></li>
+      <li><a href="#sec5">その他</a></li>
+    </ul>
+  </nav>
+  <main>
+    <section id="sec1">
+      <h1>振り返り</h1>
+      <h3>今回の課題</h3>
+      <a href="./images/thiyukan_mokuhiyo.jpg" target="_blank"><img src="./images/thiyukan_mokuhiyo.jpg" alt="mokuhyo" width="70%"></a><br>
+      
+      <p>・Arduino内で歩数カウントと消費カロリーを算出する<br>
+     ・WiFiモジュールとPC（スマホ）でリアルタイムの情報交換をする<br>
+     ・加速度センサー、WiFiモジュール、Arduinoをまとめる箱を作る<br></p>
+    </section>
+
+    <section id="sec2">
+      <h1>構想</h1>
+      <p>■階段を使うことのプラスイメージを持ってもらうにはどのようなIoTサービスが必要か（メインテーマ）<br>
+           ●階段使用時の消費カロリーを可視化する装置とIoTサービスを作ってみよう！<br>
+           ■消費カロリーを可視化するためにはどうすればいいか？<br>
+           ●心電モニタセンサーを使ってみても面白そう！<br>
+            ：<a href="https://www.switch-science.com/products/1969" alt=心電モニタ>心電モニタ</a>
+        と<a href=https://www.switch-science.com/products/1135 alt=センサー>センサー</a>合わせて7000円越え…価格面で購入を断念。(´Д⊂ヽ<br>
+           ●歩数から消費カロリーが求められそう：<a href="https://keisan.casio.jp/exec/system/1161228742" alt=参考ページ>参考ページ</a><br>
+           ●加速度センサを使って歩数を計測できそう：<a href="https://mcm-www.jwu.ac.jp/~physm/buturi19/sensor/walk.html" alt="参考ページ">参考ページ</a><br>
+           ■加速度センサとWiFiモジュールとArduinoを使用して、リアルタイムの消費カロリー表示ができるのでは？<br>
+           ●リアルタイム通信はできそう：<a href="https://jetloger.com/arduino-wroom02-wifi-chartjs-01/" alt=参考ページ>参考ページ</a><br>
+           →リアルタイムの消費カロリー表示をするために必要なモジュールを買ってみる</p>
+    </section>
+    <section id="sec3">
+      <h1>作業進捗</h1>
+      <p>加速度センサーの計測値をグラフ化することに成功</p>
+      <a href=""></a>  
+    </section>
+    <section id="sec4">
+      <h1>反省と次回目標</h1>
+      <p>▪今のままだと残り一か月で完成できない可能性がある。作業効率が悪すぎるのを改善しなければならない。<br>
+            ☞できることは着実に進めて、問題解決したら一気に前進にする。</p>
+      <p>役割を分担させて、行き詰まる前提で進めていく。<br>
+      <h3>個々人での次回目標</h3>
+     ・あみくら：加速度モジュールでの歩数計速が可能か試す。<br>
+     ・ひで：加速度センサー、WIFIモジュール、Arudinoをまとめる箱をFusionと3Dプリンタで作る。<br>
+     ・なるみ：プロジェクトノートの作成<br>
+     ・たねたろー：Arudinoを使用した消費カロリーを表示するシステムの作成</p>
+    </section>
+    
+    <section id="sec5">
+      <h1>その他</h1>
+     ・<a href="https://akizukidenshi.com/catalog/g/gK-12236/">ESP-WROOM-02 開発ボード （WiFiモジュール）</a><br><br>
+
+     ・<a href="https://akizukidenshi.com/catalog/g/gM-05153/">KXR94-2050 （3軸加速度センサモジュール）</a><br><br>
+
+     <h3>紹介動画</h3>
+     <br><br>
+
+
+     <h3>班のメンバー</h3>
+     <a href="https://amikur.github.io/xbp/de34/index.html">あみくら</a>
+     <a href="https://hidemasa0222.github.io/xbp/de34/index.html">ひで</a>
+     <a href="https://s-h17.github.io/xbp/de34/index.html">はやと</a>
+     <a href="https://narumi72.github.io/xbp/de34/index.html">なるみ</a>
+     <a href="https://tanetaro.github.io/xbp/de34/index.html">たねたろー</a>
+
+    </section>
+  </main>
+</div>
+</body>
+</html>
