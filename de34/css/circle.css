@@ -1,0 +1,65 @@
+.circle{
+    background-image: url("/de34/images/gratepritender.jpeg");
+    background-size: 180px;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-position: center center;
+    /*display: inline-block;*/
+    border: 3px solid black;
+    padding: 3px;
+}
+.circle2{
+    background-image: url("/de34/images/ne.jpg");
+    background-size: 180px;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-position: center center;
+    /*display: inline-block;*/
+    border: 3px solid black;
+    padding: 3px;
+}
+.circle3{
+    background-image: url("/de34/images/t.jpg");
+    background-size: 180px;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-position: center center;
+    /*display: inline-block;*/
+    border: 3px solid black;
+    padding: 3px;
+}
+.circle4{
+    background-image: url("/de34/images/h.jpg");
+    background-size: 180px;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-position: center center;
+    /*display: inline-block;*/
+    border: 3px solid black;
+    padding: 3px;
+}
+@import url('https://fonts.googleapis.com/earlyaccess/notosansjapanese.css');
+
+.scale-image{
+    transition-duration: 0.5s;
+    /*ここから文字の指定*/
+    text-align: center;
+    font-weight: bold;
+    color: red;
+    font-size: larger;
+    font-family: "Noto Sans Japanese";
+}
+.scale-image:hover{
+    transform: scale(1.1,1.1);
+    cursor: pointer;
+}
+.margin td{
+    padding: 20px;
+}
+a{
+    color: brown;
+}
