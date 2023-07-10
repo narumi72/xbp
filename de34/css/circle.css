@@ -42,6 +42,17 @@
     border: 3px solid black;
     padding: 3px;
 }
+.circle5{
+    background-image: url("/de34/images/A.jpg");
+    background-size: 180px;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-position: center center;
+    /*display: inline-block;*/
+    border: 3px solid black;
+    padding: 3px;
+}
 @import url('https://fonts.googleapis.com/earlyaccess/notosansjapanese.css');
 
 .scale-image{
