@@ -10,7 +10,7 @@
     padding: 3px;
 }
 .circle2{
-    background-image: url("/de34/images/ne.jpg");
+    background-image: url("./images/ne.jpg");
     background-size: 180px;
     width: 180px;
     height: 180px;
@@ -21,7 +21,7 @@
     padding: 3px;
 }
 .circle3{
-    background-image: url("/de34/images/t.jpg");
+    background-image: url("./images/t.jpg");
     background-size: 180px;
     width: 180px;
     height: 180px;
@@ -32,7 +32,7 @@
     padding: 3px;
 }
 .circle4{
-    background-image: url("/de34/images/h.jpg");
+    background-image: url("./images/h.jpg");
     background-size: 180px;
     width: 180px;
     height: 180px;
