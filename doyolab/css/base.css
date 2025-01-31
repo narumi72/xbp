@@ -1,3 +1,12 @@
+/*フォント指定*/
+@font-face {
+  font-family: "Oswald"; /* 任意のフォント名 */
+  src: url("../fonts/os.ttf") format("truetype"); /* 互換性のためttfも指定 */
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 /* 基本スタイル */
 body, html {
     margin: 0;
@@ -6,6 +15,10 @@ body, html {
     display: flex;
   }
   
+  body {
+    font-family: "MyFont", sans-serif;
+  }
+
   /* コンテナ */
   .container {
     display: flex;
