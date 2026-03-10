@@ -1,0 +1,228 @@
+/* ベースの設定 */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #021C1E; 
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Noto Sans JP', sans-serif;
+  color: #fff; /* テキストは白 */
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 30px;
+  padding: 20px;
+}
+
+.item-wrapper {
+  height: calc((100vh - 120px) / 3);
+  aspect-ratio: 1 / 1.4;
+}
+
+.item {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  background-color: #004445; /* cadet blue */
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+  z-index: 1;
+}
+
+.item:hover {
+  transform: scale(1.15);
+  z-index: 10;
+  box-shadow: 0 20px 40px rgba(0, 68, 69, 0.4); /* 暗めの影 */
+}
+
+.item-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: relative;
+  z-index: 1; /* 画像は一番下 */
+}
+
+/* ★ホバー時のCSS Ripple（波紋）アニメーション */
+.item::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0); /* 真ん中からスタート♡ */
+  width: 150%; /* 枠を完全に覆う大きさ*/
+  height: 150%;
+  background-color: rgba(44, 120, 115, 0.4); /* 半透明のティール波紋 */
+  border-radius: 50%; /* 円形♡ */
+  opacity: 0;
+  pointer-events: none; /* クリックイベントを貫通させる */
+  transition: transform 0.4s ease, opacity 0.4s ease; /* ホバー外した時の速さ */
+  z-index: 2; /* 画像の上、タイトルの下*/
+}
+
+/* ★ホバー時の波紋拡大アニメーション */
+.item:hover::after {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  transition: transform 0.8s ease, opacity 0.8s ease; /* ホバーした時の速さ */
+}
+
+/* タイトル部分 */
+.item-title {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background-color: rgba(44, 120, 115, 0.95); /* 濃いティール背景 */
+  color: #fff;
+  box-sizing: border-box;
+  padding: 12px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 16px;
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 3; /* 波紋の上に配置 */
+}
+
+/* 上2行の動き */
+.item:not(.is-bottom) .item-title {
+  bottom: 0;
+  transform: translateY(0);
+}
+.item:not(.is-bottom):hover .item-title {
+  transform: translateY(100%);
+  opacity: 1;
+}
+
+/* 下1行の動き */
+.item.is-bottom .item-title {
+  top: 0;
+  transform: translateY(0);
+}
+.item.is-bottom:hover .item-title {
+  transform: translateY(-100%);
+  opacity: 1;
+}
+
+/* モーダルのモダン化 */
+#modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 68, 69, 0.8); /* 背景もダークブルー系 */
+  backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+#modal-bg.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  display: flex;
+  width: 70vw;
+  height: 70vh;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+}
+
+.modal-left {
+  flex: 2;
+  background-color: #f1f3f5;
+}
+
+.modal-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.modal-right {
+  flex: 3;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.modal-right h2 {
+  margin-top: 0;
+  font-size: 28px;
+  color: #021C1E; /* ダークグリーン・ブルー */
+  border-bottom: 2px solid #E9ECEF;
+  padding-bottom: 12px;
+}
+
+.modal-right p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333;
+  white-space: pre-wrap;
+}
+
+.modal-close-text {
+  color: #fff;
+  margin-top: 20px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  opacity: 0.8;
+}
+/* --- ローディング画面 --- */
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #004445; /* cadet blue */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* 一番上にフタ */
+}
+
+#loading-text {
+  font-size: 5vw; /* 画面幅に合わせて可変サイズ */
+  font-weight: 900; /* 極太 */
+  color: #021C1E; /* ダークグリーン */
+  -webkit-text-stroke: 2px #fff; /* 白いアウトライン */
+  text-stroke: 2px #fff;
+  /* 最初は画面外（上）に隠す */
+  transform: translateY(-100vh);
+}
+
+#loading-bar-container {
+  width: 200px;
+  height: 4px; /* 小さく表示 */
+  border: 1px solid #fff; /* 白いアウトライン */
+  border-radius: 4px;
+  margin-top: 30px;
+  overflow: hidden; /* バーがはみ出ないよう */
+}
+
+#loading-bar {
+  width: 0%; 
+  height: 100%;
+  background-color: #021C1E; 
+/* --- ここまで --- */
